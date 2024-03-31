@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { DeleteContact } from "../Redux/ContactReducer";
+import { DeleteContact, EditContact } from "../Redux/ContactReducer";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,6 +27,11 @@ const Records = () => {
     deleteToast();
   }
 
+  const handleEdit = (id) => {
+    // const editContact = ContactReducer.value.filter((i) => i.id == id);
+    // Dispatch(EditContact(id))
+  }
+
   return (
       <div className="mt-5 MainWrapper">
       <center>
@@ -49,7 +54,7 @@ const Records = () => {
                       <strong>Password: <span className='text-success'>{p.Password}</span></strong>
                       <div className='mt-1'>
                         <button className='btn btn-danger' onClick={() => handledelete(p.id)}><i className="fa-regular fa-trash-can"></i></button>
-                        <button className='btn btn-warning ms-2'><i className="fa-solid fa-pencil"></i></button>
+                        <button className='btn btn-warning ms-2' onClick={()=>handleEdit(p.id)} data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="fa-solid fa-pencil"></i></button>
                       </div>
                     </div>
                   </div>
@@ -58,6 +63,23 @@ const Records = () => {
             </>
           })
         }
+
+        <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Contact</h1>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                hello
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-danger">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <ToastContainer />
       </center>
     </div>

@@ -1,10 +1,10 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch} from 'react-redux';
-import { CreateContact} from '../Redux/ContactReducer';
+import { CreateContact, EditContact } from '../Redux/ContactReducer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Records from './Records';
 const Contact = () => {
 
   const Dispatch = useDispatch();
