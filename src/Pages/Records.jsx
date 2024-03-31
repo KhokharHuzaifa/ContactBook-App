@@ -29,7 +29,7 @@ const Records = () => {
 
   const handleEdit = (id) => {
     // const editContact = ContactReducer.value.filter((i) => i.id == id);
-    // Dispatch(EditContact(id))
+    Dispatch(EditContact(id))
   }
 
   return (
