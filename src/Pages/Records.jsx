@@ -50,7 +50,7 @@ const Records = () => {
                   </h2>
                   <div id={`collapse${p.id}`} className="accordion-collapse collapse">
                     <div className="accordion-body">
-                      <img src={p.avatar} width={100} style={{borderRadius:'50%',objectFit:'contain'}} alt="" />
+                    <img src={p.avatar ? p.avatar : `https://cdn4.iconfinder.com/data/icons/business-and-office-29/512/396-_profile__avatar__image__dp_-512.png`} width={100} style={{borderRadius:'50%',objectFit:'contain'}} alt="" />
                       <strong>Name: <span className='text-success'>{p.Name}</span></strong>
                       <strong>Email: <span className='text-success'>{p.Email}</span></strong>
                       <strong>Password: <span className='text-success'>{p.Password}</span></strong>
