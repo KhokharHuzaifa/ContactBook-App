@@ -14,9 +14,12 @@ export const ContactSlice = createSlice({
             state.value = filteredItem
         },
         EditContact: (state,action) => {
-            // const abc = state.value.filter((i)=>i.id==action.payload.id)
-            // console.log(abc);
-            // console.log(action);
+        let idx = state.value.findIndex((el)=>{
+           if(el.id==action.payload.id){
+            return el;
+           }
+        })
+        state.value[idx]=action.payload
         }
     }
 })
